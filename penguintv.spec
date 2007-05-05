@@ -1,6 +1,6 @@
 %define name	penguintv
 %define version 1.93
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Media-rich RSS reader
@@ -13,7 +13,7 @@ License:	GPL
 Group:		Networking/News
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel 
-BuildRequires:	pygtk2.0 pygtk2.0-libglade
+BuildRequires:	pygtk2.0 pygtk2.0-libglade pygtk2.0-devel
 BuildRequires:	python-sqlite2 python-curl
 BuildRequires:	gnome-python-gtkhtml2
 BuildRequires:  gnome-python gnome-python-gnomevfs
@@ -79,7 +79,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%name
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
-%{_libdir}/python2*/site-packages/%name
+%{py_sitedir}/%name
+%{py_sitedir}/*.egg-info
 %{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
