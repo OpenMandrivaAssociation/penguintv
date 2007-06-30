@@ -1,13 +1,13 @@
 %define name	penguintv
-%define version 1.93
-%define release %mkrel 2
+%define version 3.0
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Media-rich RSS reader
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://prdownloads.sourceforge.net/penguintv/PenguinTV-%{version}.tar.bz2
+Source:		http://prdownloads.sourceforge.net/penguintv/PenguinTV-%{version}.tar.gz
 URL:		http://penguintv.sourceforge.net/
 License:	GPL
 Group:		Networking/News
@@ -41,12 +41,6 @@ perl -p -i -e 's|import sqlite|import pysqlite2||g' penguintv/__init__.py
 rm -rf $RPM_BUILD_ROOT
 python setup.py install --root=$RPM_BUILD_ROOT
 cp %buildroot/%{_datadir}/pixmaps/* %buildroot/%{_datadir}/%name
-
-#menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="PenguinTV" icon="%{name}.png" needs="x11" title="PenguinTV" longtitle="Media rich RSS reader" section="Internet/News" xdg="true"
-EOF
 
 #icons
 mkdir -p $RPM_BUILD_ROOT/%_liconsdir
@@ -82,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/*
 %{py_sitedir}/%name
 %{py_sitedir}/*.egg-info
-%{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
