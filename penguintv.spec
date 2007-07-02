@@ -20,6 +20,7 @@ BuildRequires:  gnome-python gnome-python-gnomevfs
 BuildRequires:	python-pyxml
 BuildRequires:	ImageMagick
 BuildRequires:	desktop-file-utils
+BuildRequires:	gnome-python-gtkmozembed python-gnome-devel
 Requires:	pygtk2.0 pygtk2.0-libglade
 Requires:	python-sqlite2 python-curl
 Requires:	gnome-python-gtkhtml2
@@ -39,8 +40,9 @@ perl -p -i -e 's|import sqlite|import pysqlite2||g' penguintv/__init__.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT
-cp %buildroot/%{_datadir}/pixmaps/* %buildroot/%{_datadir}/%name
+mkdir -p $RPM_BUILD_ROOT%{_prefix}
+python setup.py install --prefix=$RPM_BUILD_ROOT%{_prefix}
+#cp %buildroot/%{_datadir}/pixmaps/* %buildroot/%{_datadir}/%name
 
 #icons
 mkdir -p $RPM_BUILD_ROOT/%_liconsdir
@@ -69,7 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc CONTRIBUTORS LICENSE MANIFEST PKG-INFO README
-%doc feedparser/docs 
 %{_bindir}/PenguinTV
 %{_datadir}/%name
 %{_datadir}/applications/*
