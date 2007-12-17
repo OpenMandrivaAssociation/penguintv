@@ -11,7 +11,6 @@ Source:		http://prdownloads.sourceforge.net/penguintv/PenguinTV-%{version}.tar.g
 URL:		http://penguintv.sourceforge.net/
 License:	GPL
 Group:		Networking/News
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel 
 BuildRequires:	pygtk2.0 pygtk2.0-libglade pygtk2.0-devel
 BuildRequires:	python-sqlite2 python-curl
