@@ -18,7 +18,7 @@ BuildRequires:	python-sqlite2 python-curl
 BuildRequires:	gnome-python-gtkhtml2
 BuildRequires:  gnome-python gnome-python-gnomevfs
 BuildRequires:	python-pyxml
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	gnome-python-gtkmozembed python-gnome-devel
 Requires:	pygtk2.0 pygtk2.0-libglade
