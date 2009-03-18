@@ -17,7 +17,7 @@ BuildRequires:	pygtk2.0 pygtk2.0-libglade pygtk2.0-devel
 BuildRequires:	python-sqlite2 python-curl
 BuildRequires:	gnome-python-gtkhtml2
 BuildRequires:  gnome-python gnome-python-gnomevfs
-BuildRequires:	python-pyxml
+BuildRequires:	python-pyxml python-imaging
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	gnome-python-gtkmozembed gnome-python-devel
@@ -25,7 +25,7 @@ Requires:	pygtk2.0 pygtk2.0-libglade
 Requires:	python-sqlite2 python-curl
 Requires:	gnome-python-gtkhtml2
 Requires:	gnome-python gnome-python-gnomevfs
-Requires:	python-pyxml
+Requires:	python-pyxml python-imaging
 BuildArch:	noarch
 
 %description
