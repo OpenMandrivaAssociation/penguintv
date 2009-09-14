@@ -1,6 +1,6 @@
 %define name	penguintv
 %define version 4.0.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Media-rich RSS reader
