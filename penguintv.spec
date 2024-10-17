@@ -8,7 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://prdownloads.sourceforge.net/penguintv/PenguinTV-%{version}.tar.gz
-URL:		http://penguintv.sourceforge.net/
+URL:		https://penguintv.sourceforge.net/
 License:	GPLv2+
 Group:		Networking/News
 BuildRoot:	%{_tmppath}/%{name}-buildroot
